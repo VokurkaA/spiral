@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="margin: 0px;">
+    <canvas id="myCanvas" height="750" width="750"></canvas>
+    <script>
+        let l = 700;
+        const d = 10;
+
+        const canvas = document.getElementById("myCanvas").getContext("2d");
+
+        let x = 0;
+        let y = 0;
+        canvas.beginPath();
+        drawRecursively();
+        canvas.stroke();
+
+        function drawRecursively() {
+            if (l <= 0)
+                return;
+
+            canvas.moveTo(x, y);
+
+            x += l;
+            canvas.lineTo(x, y);
+
+            l -= d;
+            y += l;
+            canvas.lineTo(x, y);
+
+            x -= l;
+            canvas.lineTo(x, y);
+
+            l -= d
+            y -= l;
+            canvas.lineTo(x, y);
+            drawRecursively();
+        }
+
+        function draw() {
+            while (l > 0) {
+                canvas.moveTo(x, y);
+
+                x += l;
+                canvas.lineTo(x, y);
+
+                l -= d;
+                y += l;
+                canvas.lineTo(x, y);
+
+                x -= l;
+                canvas.lineTo(x, y);
+
+                l -= d
+                y -= l;
+                canvas.lineTo(x, y);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
