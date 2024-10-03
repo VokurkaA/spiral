@@ -6,7 +6,7 @@
 </head>
 
 <body style="margin: 0px;">
-    <canvas id="myCanvas" height="750" width="750"></canvas>
+    <canvas id="myCanvas" height="750" width="750" style="margin: 10px;"></canvas>
     <script>
         let l = 700;
         const d = 10;
@@ -16,7 +16,8 @@
         let x = 0;
         let y = 0;
         canvas.beginPath();
-        drawRecursively();
+        // drawRecursively();
+        draw()
         canvas.stroke();
 
         function drawRecursively() {
